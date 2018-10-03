@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Cakeulator</title>
+<script>
+function Cakeulate()
+{
+  var form = document.forms["cakeulator"];
+  var recipeNumCakes = parseInt(form["recipe-num-cakes"].value);
+  var recipeCakeSize = parseFloat(form["recipe-cake-size"].value);
+  var recipeCakeUnit = form["recipe-cake-unit"].value;
+  var recipeCakeType = form["recipe-cake-type"].value;
+
+  var desiredNumCakes = parseInt(form["desired-num-cakes"].value);
+  var desiredCakeSize = parseFloat(form["desired-cake-size"].value);
+  var desiredCakeUnit = form["desired-cake-unit"].value;
+  var desiredCakeType = form["desired-cake-type"].value;
+
+  recipeCakeSize = recipeCakeUnit == "inch" ? recipeCakeSize : (recipeCakeSize / 2.54);
+  desiredCakeSize = desiredCakeUnit == "inch" ? desiredCakeSize : (desiredCakeSize / 2.54);
+  var recipeArea = recipeNumCakes * (recipeCakeType == "round" ? (Math.PI * Math.pow(recipeCakeSize / 2, 2)) : Math.pow(recipeCakeSize, 2));
+  var desiredArea = desiredNumCakes * (desiredCakeType == "round" ? (Math.PI * Math.pow(desiredCakeSize / 2, 2)) : Math.pow(desiredCakeSize, 2));
+  var multiple = parseFloat((desiredArea / recipeArea).toPrecision(2));
+
+  alert("You need to use " + multiple + " times the recipe!");
+}
+</script>
+<style>
+td
+{
+  padding-top: 10px;
+}
+</style>
+</head>
+<body>
+<div style="margin: auto; width: 500px">
+<form id="cakeulator">
+<table>
+<tr>
+<td colspan="2" style="text-align: center; font-size: 3em">The Cakeulator</td>
+</tr>
+<tr>
+<td style="text-align: right">My recipe makes:</td><td><input type="number" name="recipe-num-cakes" value="1" min="1" step="1" style="width: 3em" /> &#215; <input type="number" name="recipe-cake-size" value="6" min="1" step="1" style="width: 3em" /> <select name="recipe-cake-unit"><option value="inch">inch</option><option value="cm">cm</option></select> <select name="recipe-cake-type"><option value="round">Round</option><option value="square">Square</option></select> cakes</td>
+</tr>
+<tr>
+<td style="text-align: right">I want to make:</td><td><input type="number" name="desired-num-cakes" value="1" min="1" step="1" style="width: 3em" /> &#215; <input type="number" name="desired-cake-size" value="6" min="1" step="1" style="width: 3em" /> <select name="desired-cake-unit"><option value="inch">inch</option><option value="cm">cm</option></select> <select name="desired-cake-type"><option value="round">Round</option><option value="square">Square</option></select> cakes</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center">
+<input type="button" value="Cakeulate!" onclick="Cakeulate()" />
+</td>
+</td>
+</table>
+</form>
+</div>
+</body>
+</html>

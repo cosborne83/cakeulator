@@ -1,6 +1,12 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Cakeulator</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="Cake recipe converter" />
+
+<title>Cakeulator - cake recipe converter</title>
+
 <script>
 function Cakeulate()
 {
@@ -24,32 +30,39 @@ function Cakeulate()
   alert("You need to use " + multiple + " times the recipe!");
 }
 </script>
-<style>
-td
-{
-  padding-top: 10px;
-}
-</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
-<div style="margin: auto; width: 500px">
+<div class="container">
+<div class="py-4 text-center">
+<h1>The Cakeulator</h1>
+</div>
 <form id="cakeulator">
-<table>
-<tr>
-<td colspan="2" style="text-align: center; font-size: 3em">The Cakeulator</td>
-</tr>
-<tr>
-<td style="text-align: right">My recipe makes:</td><td><input type="number" name="recipe-num-cakes" value="1" min="1" step="1" style="width: 3em" /> &#215; <input type="number" name="recipe-cake-size" value="6" min="1" step="1" style="width: 3em" /> <select name="recipe-cake-unit"><option value="inch">inch</option><option value="cm">cm</option></select> <select name="recipe-cake-type"><option value="round">Round</option><option value="square">Square</option></select> cakes</td>
-</tr>
-<tr>
-<td style="text-align: right">I want to make:</td><td><input type="number" name="desired-num-cakes" value="1" min="1" step="1" style="width: 3em" /> &#215; <input type="number" name="desired-cake-size" value="6" min="1" step="1" style="width: 3em" /> <select name="desired-cake-unit"><option value="inch">inch</option><option value="cm">cm</option></select> <select name="desired-cake-type"><option value="round">Round</option><option value="square">Square</option></select> cakes</td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center">
-<input type="button" value="Cakeulate!" onclick="Cakeulate()" />
-</td>
-</td>
-</table>
+<div class="form-row justify-content-center py-1">
+<div class="col-sm-2 col-form-label text-right">My recipe makes:</div>
+<div class="col-sm-auto"><input type="number" name="recipe-num-cakes" class="form-control" value="1" min="1" step="1" style="width: 4em" /></div>
+<div class="col-sm-auto col-form-label">&#215;</div>
+<div class="col-sm-auto"><input type="number" name="recipe-cake-size" class="form-control" value="6" min="1" step="1" style="width: 4em" /></div>
+<div class="col-sm-auto"><select name="recipe-cake-unit" class="form-control"><option value="inch">inch</option><option value="cm">cm</option></select></div>
+<div class="col-sm-auto"><select name="recipe-cake-type" class="form-control"><option value="round">Round</option><option value="square">Square</option></select></div>
+<div class="col-sm-1 col-form-label">cakes</div>
+</div>
+<div class="form-row justify-content-center py-1">
+<div class="col-sm-2 col-form-label text-right">I want to make:</div>
+<div class="col-sm-auto"><input type="number" name="desired-num-cakes" class="form-control" value="1" min="1" step="1" style="width: 4em" /></div>
+<div class="col-sm-auto col-form-label">&#215;</div>
+<div class="col-sm-auto"><input type="number" name="desired-cake-size" class="form-control" value="6" min="1" step="1" style="width: 4em" /></div>
+<div class="col-sm-auto"><select name="desired-cake-unit" class="form-control"><option value="inch">inch</option><option value="cm">cm</option></select></div>
+<div class="col-sm-auto"><select name="desired-cake-type" class="form-control"><option value="round">Round</option><option value="square">Square</option></select></div>
+<div class="col-sm-1 col-form-label">cakes</div>
+</div>
+<div class="row justify-content-center py-3">
+<div class="col-sm-auto">
+<button class="btn btn-primary" value="Cakeulate!" onclick="Cakeulate()">Cakeulate <i class="fas fa-birthday-cake"></i></button>
+</div>
+</div>
 </form>
 </div>
 </body>

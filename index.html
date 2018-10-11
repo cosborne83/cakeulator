@@ -33,6 +33,24 @@ function Cakeulate()
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<style>
+.form-row
+{
+  align-items: center;
+}
+@media (max-width: 576px)
+{
+  .form-row>[class*=col-]
+  {
+    text-align: center !important;
+  }
+  .form-control
+  {
+    display: inline-block;
+  }
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -58,7 +76,7 @@ function Cakeulate()
 <div class="col-sm-auto"><select name="desired-cake-type" class="form-control"><option value="round">Round</option><option value="square">Square</option></select></div>
 <div class="col-sm-1 col-form-label">cakes</div>
 </div>
-<div class="row justify-content-center py-3">
+<div class="form-row justify-content-center py-3">
 <div class="col-sm-auto">
 <button class="btn btn-primary" value="Cakeulate!" onclick="Cakeulate()">Cakeulate <i class="fas fa-birthday-cake"></i></button>
 </div>

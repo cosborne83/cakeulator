@@ -11,12 +11,12 @@
 function Cakeulate()
 {
   var form = document.forms["cakeulator"];
-  var recipeNumCakes = parseInt(form["recipe-num-cakes"].value);
+  var recipeNumCakes = parseFloat(form["recipe-num-cakes"].value);
   var recipeCakeSize = parseFloat(form["recipe-cake-size"].value);
   var recipeCakeUnit = form["recipe-cake-unit"].value;
   var recipeCakeType = form["recipe-cake-type"].value;
 
-  var desiredNumCakes = parseInt(form["desired-num-cakes"].value);
+  var desiredNumCakes = parseFloat(form["desired-num-cakes"].value);
   var desiredCakeSize = parseFloat(form["desired-cake-size"].value);
   var desiredCakeUnit = form["desired-cake-unit"].value;
   var desiredCakeType = form["desired-cake-type"].value;
